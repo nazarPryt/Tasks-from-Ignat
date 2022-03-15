@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Message from "./p2-homeworks/h1/Message";
+import {messageData} from "./p2-homeworks/h1/HW1";
 
 function App() {
   return (
@@ -8,7 +10,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          <Message
+              message={messageData.message}
+              avatar={messageData.avatar}
+              time={messageData.time}
+              name={messageData.name}
+          />
         </p>
         <a
           className="App-link"
