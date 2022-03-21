@@ -2,12 +2,17 @@ import React, {useState} from 'react'
 import Affairs from './Affairs'
 
 // types
-export type AffairPriorityType = any // need to fix any
-export type AffairType = any // need to fix any
-export type FilterType = 'all' | AffairPriorityType
+export type AffairPriorityType = 'low' | 'high' | 'middle';
+export type FilterType = 'all' | 'low' | 'high' | 'middle'
+export type AffairType = Array<DataType>
+export type DataType = {
+    _id: number
+    name: string
+    priority: AffairPriorityType
+}
 
 // constants
-const defaultAffairs: any = [ // need to fix any
+const defaultAffairs: Array<DataType> = [ // need to fix any
     {_id: 1, name: 'React', priority: 'high'},
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -18,18 +23,22 @@ const defaultAffairs: any = [ // need to fix any
 // pure helper functions
 export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
     if (filter === 'all') return affairs
-    else return // need to fix
-}
-export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
-    return // need to fix
+    // else return // need to fix
 }
 
+
 function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
+    const [affairs, setAffairs] = useState<Array<DataType>>(defaultAffairs)
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
+
+
+    function deleteAffair(_id: number) {
+        let delAff = affairs.filter(el => el._id !== _id)
+        debugger;
+        setAffairs(delAff)
+    }
 
     return (
         <div>
@@ -38,9 +47,9 @@ function HW2() {
 
             {/*should work (должно работать)*/}
             <Affairs
-                data={filteredAffairs}
+                data={affairs}
                 setFilter={setFilter}
-                deleteAffairCallback={deleteAffairCallback}
+                deleteAffair={deleteAffair}
             />
 
             <hr/>
