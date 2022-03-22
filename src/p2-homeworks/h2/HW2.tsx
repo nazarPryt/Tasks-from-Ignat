@@ -11,8 +11,7 @@ export type DataType = {
     priority: AffairPriorityType
 }
 
-// constants
-const defaultAffairs: Array<DataType> = [ // need to fix any
+const defaultAffairs: Array<DataType> = [
     {_id: 1, name: 'React', priority: 'high'},
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -20,23 +19,29 @@ const defaultAffairs: Array<DataType> = [ // need to fix any
     {_id: 5, name: 'html & css', priority: 'middle'},
 ]
 
-// pure helper functions
-export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
-    if (filter === 'all') return affairs
-    // else return // need to fix
-}
-
-
 function HW2() {
     const [affairs, setAffairs] = useState<Array<DataType>>(defaultAffairs)
     const [filter, setFilter] = useState<FilterType>('all')
 
-    const filteredAffairs = filterAffairs(affairs, filter)
 
+    let filteredData = affairs
+    if (filter === 'low') {
+        filteredData = affairs.filter(el => el.priority === 'low')
+    }
+    if (filter === 'middle') {
+        filteredData = affairs.filter(el => el.priority === 'middle')
+    }
+    if (filter === 'high') {
+        filteredData = affairs.filter(el => el.priority === 'high')
+    }
+
+
+    function filterAffairs(filter: FilterType) {
+        return setFilter(filter)
+    }
 
     function deleteAffair(_id: number) {
         let delAff = affairs.filter(el => el._id !== _id)
-        debugger;
         setAffairs(delAff)
     }
 
@@ -47,8 +52,8 @@ function HW2() {
 
             {/*should work (должно работать)*/}
             <Affairs
-                data={affairs}
-                setFilter={setFilter}
+                data={filteredData}
+                setFilter={filterAffairs}
                 deleteAffair={deleteAffair}
             />
 
@@ -58,6 +63,7 @@ function HW2() {
             <hr/>
         </div>
     )
+
 }
 
 export default HW2
