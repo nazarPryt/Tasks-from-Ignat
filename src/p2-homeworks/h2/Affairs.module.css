@@ -2,22 +2,22 @@
 
 }
 
-.wrapp {
+.allTaskWrap {
+    padding: 10px;
+}
+
+.lineWrap {
     display: grid;
-    max-width: 300px;
     grid-template-columns: repeat(3, 1fr);
-    padding: 2px 0;
-}
-
-.name {
-
-}
-
-.priority {
-
+    padding: 4px 0;
+    max-width: 300px;
 }
 
 .btnX {
-    background-color: #002B00;
+    background-color: forestgreen;
     color: #A8E700;
+}
+
+.btnX:hover {
+    background-color: darkslategrey;
 }

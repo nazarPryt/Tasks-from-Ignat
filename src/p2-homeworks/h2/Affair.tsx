@@ -3,28 +3,23 @@ import {AffairType} from "./HW2";
 import s from './Affairs.module.css'
 
 type AffairPropsType = {
-    data: AffairType
-    deleteAffair: (_id: number) => void
+    // key не нужно типизировать
+    affair: AffairType
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affair(props: AffairPropsType) {
+    const deleteCallback = () => {
+        props.deleteAffairCallback(props.affair._id)
+    }
 
     return (
-        <ul>
-            {props.data.map(el => {
-                return (
-                    <li key={el._id} className={s.wrapp}><span className={s.name}>{el.name}</span><span
-                        className={s.priority}>{el.priority}</span>
-                        <button onClick={() => {
-                            props.deleteAffair(el._id)
-                        }} className={s.btnX}>X
-                        </button>
-                    </li>
-                )
-            })}
+        <div className={s.lineWrap}>
+            <span>{props.affair.name}</span>
+            <span>{props.affair.priority}</span>
 
-
-        </ul>
+            <button onClick={deleteCallback} className={s.btnX}>X</button>
+        </div>
     )
 }
 

@@ -1,15 +1,22 @@
 import React from 'react'
 import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
+import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: AffairType
-    setFilter: (filter: FilterType) => void
-    deleteAffair: (_id: number) => void
+    data: AffairType[]
+    setFilter: (value: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
-
+    const mappedAffairs = props.data.map((a: AffairType) => (
+        <Affair // should work
+            key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
+            affair={a}
+            deleteAffairCallback={props.deleteAffairCallback}
+        />
+    ))
 
     const setAll = () => {
         props.setFilter('all')
@@ -25,12 +32,9 @@ function Affairs(props: AffairsPropsType) {
     }
 
     return (
-        <div>
+        <div className={s.allTaskWrap}>
 
-            <Affair
-                data={props.data}
-                deleteAffair={props.deleteAffair}
-            />
+            {mappedAffairs}
 
             <button onClick={setAll}>All</button>
             <button onClick={setHigh}>High</button>
