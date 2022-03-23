@@ -1,3 +1,23 @@
 .someClass {
 
 }
+
+.allTaskWrap {
+    padding: 10px;
+}
+
+.lineWrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4px 0;
+    max-width: 300px;
+}
+
+.btnX {
+    background-color: forestgreen;
+    color: #A8E700;
+}
+
+.btnX:hover {
+    background-color: darkslategrey;
+}
