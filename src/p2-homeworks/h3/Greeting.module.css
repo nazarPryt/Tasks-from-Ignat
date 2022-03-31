@@ -2,6 +2,25 @@
 
 }
 
+.taskWrap {
+    height: 45px;
+}
+
 .error {
-    border: 1px solid red;
+    color: red;
+}
+
+.errorBorder {
+    border: 3px solid red;
+    color: red;
+}
+
+.approved {
+    position: relative;
+    border: 3px solid green;
+}
+
+.inputWrap {
+    display: inline-flex;
+    flex-direction: column;
 }
