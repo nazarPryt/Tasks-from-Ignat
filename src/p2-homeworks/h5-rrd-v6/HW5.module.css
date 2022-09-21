@@ -1,0 +1,29 @@
+.navWrap {
+    display: flex;
+    margin: 10px 0;
+}
+.navLink {
+    background-color: #009688;
+    padding: 10px 20px;
+    margin: 0 4px;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    z-index: 100;
+}
+.navLink:hover {
+    color: darkkhaki;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

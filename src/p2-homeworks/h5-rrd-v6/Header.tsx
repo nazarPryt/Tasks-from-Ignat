@@ -1,15 +1,19 @@
 import React from 'react'
-import {NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {PATH} from "./Pages";
+import s from './HW5.module.css'
+import Burger from "./Burger";
 
 
 function Header() {
     return (
         <div>
-            // add NavLinks(HEADER|)
-            <NavLink to={PATH.PRE_JUNIOR}>Pre-Junior</NavLink>
-            <NavLink to={PATH.JUNIOR}>Junior</NavLink>
-            <NavLink to={PATH.JUNIOR_PLUS}>Junior-Plus</NavLink>
+            {/*<nav className={s.navWrap}>*/}
+            {/*    <Link className={s.navLink} to={PATH.PRE_JUNIOR}>Pre-Junior</Link>*/}
+            {/*    <Link className={s.navLink} to={PATH.JUNIOR}>Junior</Link>*/}
+            {/*    <Link className={s.navLink} to={PATH.JUNIOR_PLUS}>Junior-PLUS</Link>*/}
+            {/*</nav>*/}
+            <Burger/>
         </div>
     )
 }

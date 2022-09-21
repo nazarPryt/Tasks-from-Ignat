@@ -6,7 +6,6 @@ function App() {
     return (
 
         <div className={s.App}>
-            <div>react homeworks from Nazar:</div>
             <HW5/>
         </div>
 

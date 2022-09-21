@@ -14,7 +14,7 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, onEnter, totalUsers}) => {  // деструктуризация пропсов
 
-    const inputClass = !error ? (s.approved) : s.errorBorder;
+    // const inputClass = !error ? (s.approved) : s.errorBorder;
 
     return (
         <div className={s.taskWrap}>
