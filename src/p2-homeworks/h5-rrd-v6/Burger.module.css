@@ -1,17 +1,4 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
 
-/* ---------------- Navbar and burger menu ------------------ */
-.nav {
-    width: 100%;
-    height: 5em;
-    background-color: rgb(37, 39, 53);
-    display: flex;
-    justify-content: flex-start;
-    padding: 1em;
-}
 .navLink {
     background-color: #009688;
     padding: 10px 20px;
@@ -20,68 +7,35 @@
     border-radius: 20px;
     text-decoration: none;
 }
-.navLink_Wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    height: 100%;
-}
-.burgerMenu {
-    height: 100%;
-    width: 4em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    cursor: pointer;
-}
 
-.burgerBar {
-    width: 4em;
-    height: 0.5em;
-    background-color: rgb(0, 183, 255);
-    border-radius: 0.5em;
-}
-
-.menu {
-    width: 20%;
-    height: 100vh;
-    background-color: rgb(154, 181,240);
+.burgerWrap_open {
     position: absolute;
-    top: 0;
-    z-index: -1;
+    display: flex;
+    align-items: center;
+    left: -370px;
+    top:0;
+    transition: 0.2s linear;
 }
-
-/* ------------- sliding menu ------------------ */
-.hidden {
-    display: none;
+.burgerWrap_close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+    top:0;
+    transition: 0.2s linear;
 }
+.burgerIcon img{
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    animation: wiggle 3s infinite ;
 
-.visible {
-    display: inherit;
 }
-
-/* ----- animations--------- */
-/* clicked */
-.burgerBar.clicked:nth-child(1){
-    transform: rotate(45deg) translate(0.75em, 1.25em);
-    transition: ease-out 0.5s;
-}
-
-.burgerBar.clicked:nth-child(2){
-    transform: scale(0.1);
-    transition: ease-out 0.5s;
-}
-
-.burgerBar.clicked:nth-child(3){
-    transform: rotate(135deg) translate(-0.5em, 1em);
-    transition: ease-out 0.5s;
-}
-
-/* unclicked */
-.burgerBar.unclicked {
-    transform: rotate(0) translate(0);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+@keyframes wiggle {
+    0% { transform: translate(4px,0px); }
+    20% { transform: translate(-4px, 0px); }
+    40% { transform: translate(4px,0px); }
+    60% { transform: translate(-4px, 0px); }
+    80% { transform: translate(4px,0px); }
+    100% { transform: translate(-4px, 0px); }
 }
