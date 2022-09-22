@@ -5,6 +5,7 @@ import HW3 from '../../h3/HW3'
 import HW4 from '../../h4/HW4'
 import {Link} from "react-router-dom";
 import s from "../HW5.module.css";
+import HW6 from "../../h6/HW6";
 
 
 function PreJunior() {
@@ -15,8 +16,7 @@ function PreJunior() {
             <HW2/>
             <HW3/>
             <HW4/>
-            {/*<HW6/>*/}
-
+            <HW6/>
         </div>
     )
 }
