@@ -1,13 +1,28 @@
-export const homeWorkReducer = (state: any, action: any): any => { // need to fix any
+import {UserType} from "../HW8";
+
+export type actionType = sortUpAT | sortDownAT | check18AT
+export const homeWorkReducer = (state: UserType[], action: actionType): UserType[] => {
     switch (action.type) {
-        case 'sort': {
-            // need to fix
-            return state
+        case "SORT-UP": {
+            console.log('up')
+            return [...state]
         }
-        case 'check': {
-            // need to fix
-            return state
+        case 'SORT-DOWN': {
+            console.log('down')
+            return [...state]
         }
-        default: return state
+        case 'CHECK-18': {
+            console.log('check')
+            return [...state]
+        }
+        default:
+            return state
     }
 }
+
+export const sortUpAC = () => ({type: 'SORT-UP' as const})
+type sortUpAT = ReturnType<typeof sortUpAC>
+export const sortDownAC = () => ({type: 'SORT-DOWN' as const})
+type sortDownAT = ReturnType<typeof sortDownAC>
+export const check18AC = () => ({type: 'CHECK-18' as const})
+type check18AT = ReturnType<typeof check18AC>
