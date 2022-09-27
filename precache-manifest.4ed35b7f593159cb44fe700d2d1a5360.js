@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d7a318b990a6c39a8da9823d93204dee",
+    "revision": "09352e1d08c9e65c5e142c238f9ead4a",
     "url": "/Tasks-from-Ignat/index.html"
   },
   {
-    "revision": "1974b5584e98688cc996",
-    "url": "/Tasks-from-Ignat/static/css/main.dfef9d24.chunk.css"
+    "revision": "6f51950535d2209e063a",
+    "url": "/Tasks-from-Ignat/static/css/main.c99df686.chunk.css"
   },
   {
-    "revision": "47aa6bf881b6b662603d",
-    "url": "/Tasks-from-Ignat/static/js/2.86c3324e.chunk.js"
+    "revision": "08412cd40e2a0f52172d",
+    "url": "/Tasks-from-Ignat/static/js/2.de9a5cf7.chunk.js"
   },
   {
     "revision": "40603d66a12b4e76df8998e78935ec3a",
-    "url": "/Tasks-from-Ignat/static/js/2.86c3324e.chunk.js.LICENSE.txt"
+    "url": "/Tasks-from-Ignat/static/js/2.de9a5cf7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1974b5584e98688cc996",
-    "url": "/Tasks-from-Ignat/static/js/main.c5ece98e.chunk.js"
+    "revision": "6f51950535d2209e063a",
+    "url": "/Tasks-from-Ignat/static/js/main.5867011e.chunk.js"
   },
   {
     "revision": "ceae675045bccf3ebab6",
