@@ -10,7 +10,7 @@ function HW7() {
         <div>
             <hr/>
             <hr/>
-            homeworks 7
+            <h2>homeworks 7</h2>
 
             <div>
                 <SuperSelect
@@ -28,8 +28,7 @@ function HW7() {
                 />
             </div>
 
-            <hr/>
-            <hr/>
+
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperSelect/>*/}
             {/*<AlternativeSuperRadio/>*/}

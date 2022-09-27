@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {check18AC, homeWorkReducer, sortDownAC, sortUpAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
-
+import s from './HW8.module.css'
 export type UserType = {
     _id: number
     name: string
@@ -22,7 +22,7 @@ function HW8() {
 
 
     const finalPeople = people.map((p: UserType) => (
-        <div key={p._id}>
+        <div key={p._id} className={s.userWrap}>
             <span>{p.name}</span>
             <span>{p.age}</span>
         </div>
@@ -35,7 +35,7 @@ function HW8() {
     return (
         <div>
             <hr/>
-            homeworks 8
+            <h2>homeworks 8</h2>
 
             {finalPeople}
 

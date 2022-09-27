@@ -4,16 +4,14 @@ export type actionType = sortUpAT | sortDownAT | check18AT
 export const homeWorkReducer = (state: UserType[], action: actionType): UserType[] => {
     switch (action.type) {
         case "SORT-UP": {
-            console.log('up')
-            return [...state]
+            return [...state.sort((user1, user2) => user1.name > user2.name ? 1 : -1)]
         }
         case 'SORT-DOWN': {
-            console.log('down')
-            return [...state]
+            return [...state.sort((user1, user2) => user1.name < user2.name ? 1 : -1)]
         }
         case 'CHECK-18': {
             console.log('check')
-            return [...state]
+            return [...state.filter(user => user.age > 18)]
         }
         default:
             return state
