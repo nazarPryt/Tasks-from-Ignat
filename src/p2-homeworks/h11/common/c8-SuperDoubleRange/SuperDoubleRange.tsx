@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Slider} from "@mui/material";
 
 type SuperDoubleRangePropsType = {
@@ -14,22 +14,25 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
         // min, max, step, disable, ...
     }
 ) => {
-
-    const [newValue, setNewValue] = useState <number[]>([20, 40])
     // сделать самому, можно подключать библиотеки
 
     const handleChange = (event: Event, newValue: number | number[]) => {
-        setNewValue(newValue as number[])
+        onChangeRange && onChangeRange(newValue as [number, number])
     }
 
-
+    const styleIn = {
+        width: '150px'
+    }
     return (
         <>
             <Slider
-                getAriaLabel={() => 'Temperature range'}
+                style={styleIn}
                 value={value}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
+                disableSwap
+                min={0}
+                max={100}
             />
         </>
     )
