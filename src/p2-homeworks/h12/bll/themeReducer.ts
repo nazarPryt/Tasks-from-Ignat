@@ -1,13 +1,14 @@
 
 
 type actionType = changeThemeAT
-export type stateType = 'dark'| 'red'| 'some';
+export type stateType = 'dark' | 'red'| 'some';
 
-const initState: stateType = 'dark';
+const initState = 'dark'
 
 export const themeReducer = (state:stateType = initState, action: actionType): stateType => { // fix any
     switch (action.type) {
         case "CHANGE-THEME": {
+
             return state = action.theme;
         }
         default: return state;
