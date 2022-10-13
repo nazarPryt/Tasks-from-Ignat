@@ -23,9 +23,9 @@ function HW12() {
     return (
         <div className={s[theme + '']}>
             <hr/>
-            <span className={s[theme + '-text']}>
+            <h2 className={s[theme + '-text']}>
                 homeworks 12
-            </span>
+            </h2>
 
             <SuperRadio options={themes} onChangeOption={onChangeCallback} />
             {/*should work (должно работать)*/}

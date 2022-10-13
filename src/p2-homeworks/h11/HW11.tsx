@@ -13,12 +13,16 @@ function HW11() {
     return (
         <div>
             <hr/>
-            homeworks 11
+            <h2>
+                homeworks 11
+            </h2>
+
 
             {/*should work (должно работать)*/}
             <div>
                 <span>{value1}</span>
                 <SuperRange
+                    value={value1}
                     onChangeRange={setValue1}
                     // сделать так чтоб value1 изменялось
                 />
