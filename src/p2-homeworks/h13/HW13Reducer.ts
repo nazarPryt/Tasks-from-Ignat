@@ -2,6 +2,7 @@ import {RequestsAPI} from "./RequestsAPI";
 import {App13HWThunkType} from "./storHM13";
 
 
+
 type stateHW13Type = {
     value: boolean
 }
@@ -24,8 +25,9 @@ export const setValueHW13TC = (value: boolean): App13HWThunkType => async dispat
     try {
         const res = await RequestsAPI.makeRequest(value)
         alert(res.data.errorText)
-    } catch (error) {
-        // alert(res.data.errorText)
+    } catch (error: any) {
+        console.log({...error});
+        console.log(error.response ? error.response.data.errorText : error.message);
     }
 
 }
