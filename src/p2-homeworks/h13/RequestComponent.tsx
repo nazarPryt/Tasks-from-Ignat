@@ -1,23 +1,21 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react';
+import React, {ChangeEvent} from 'react';
 import {setValueHW13AC, setValueHW13TC} from "./HW13Reducer";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {Root13HWReducerType} from "./storHM13";
+import {useAppDispatch} from "./hooks";
 
-type defaultInputTypes = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-type propsType = defaultInputTypes & {}
-
-const RequestComponent = (props: propsType) => {
+const RequestComponent = () => {
 
     const value = useSelector<Root13HWReducerType, boolean>(state => state.checkboxValue.value)
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch(setValueHW13AC(e.currentTarget.checked))
     }
     const onClickHandler = () => {
-        setValueHW13TC(value)
+        dispatch(setValueHW13TC(value))
     }
     return (
         <div>
